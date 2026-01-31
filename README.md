@@ -103,6 +103,50 @@ Inspired by Kurzweil, [Epoch AI](https://epochai.org/), [Statista](https://www.s
 
 ---
 
+## Repository Structure
+
+Each plot follows a standardized structure:
+
+```
+<plot-name>/
+├── index.html              # Interactive page (uses shared/site.css)
+├── data/
+│   ├── <slug>.csv          # Source data
+│   └── meta.json           # Metadata: title, description, fields, sources
+├── output/ or export/
+│   ├── *_interactive.html  # Plotly interactive chart
+│   ├── *_highres.png       # High-res PNG export
+│   └── *.svg               # SVG vector export
+├── src/
+│   ├── *.py                # Matplotlib static generator
+│   └── *_plotly.py         # Plotly interactive generator
+└── README.md
+```
+
+### Shared Assets
+
+- `shared/site.css` – Common styles for all pages
+- `shared/site.js` – Navigation bar injection
+- `scripts/validate_all.py` – Validate all plots (run: `python scripts/validate_all.py`)
+
+---
+
+## Regenerating Plots
+
+```bash
+pip install matplotlib pandas plotly numpy
+
+# Regenerate a specific plot
+cd <plot-name>/src
+python <slug>.py           # Static PNG/SVG
+python <slug>_plotly.py    # Interactive HTML
+
+# Validate all plots
+python scripts/validate_all.py
+```
+
+---
+
 ## Contributing
 
 Ideas, new milestones, or bug reports welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
