@@ -1,0 +1,41 @@
+{
+  "title": "Energy Leverage per Person",
+  "description": "How much total energy does an average human command per year, compared to the metabolic baseline?",
+  "metabolic_baseline": {
+    "value_GJ_per_year": 3.6,
+    "value_watts": 114.08,
+    "description": "Approximate human food energy (metabolic baseline)",
+    "source": "Smil (2017), Energy and Civilization"
+  },
+  "units": {
+    "energy_total_GJ_per_person_year": "GJ/person/year",
+    "energy_external_GJ_per_person_year": "GJ/person/year (total minus metabolic)",
+    "multiple_vs_metabolic": "E_total / E_metabolic (dimensionless)",
+    "watts_per_person": "W (continuous power equivalent)",
+    "watts_external": "W (external energy only)"
+  },
+  "conversion": {
+    "formula": "W = (GJ * 1e9) / (365.25 * 24 * 3600)",
+    "seconds_per_year": 31557600
+  },
+  "sources": [
+    {
+      "name": "Nature synthesis paper",
+      "description": "Per-capita energy anchors across Holocene intervals (6.2, 7.1, 8.3, 18.4, 27.2, 61 GJ/person/year)",
+      "url": "https://www.nature.com/articles/s41467-024-53917-0"
+    },
+    {
+      "name": "Smil (2017)",
+      "description": "Metabolic baseline (~3.6 GJ/person/year) from Energy and Civilization",
+      "url": "https://mitpress.mit.edu/9780262035774/energy-and-civilization/"
+    }
+  ],
+  "era_markers": [
+    {"year": -10000, "label": "Agriculture", "description": "Neolithic Revolution"},
+    {"year": -3200, "label": "Writing/States", "description": "Early states and writing systems"},
+    {"year": 1750, "label": "Coal/Steam", "description": "Industrial Revolution begins"},
+    {"year": 1950, "label": "Acceleration", "description": "Post-1950 energy surge"}
+  ],
+  "created": "2026-01-31",
+  "author": "mschwar"
+}

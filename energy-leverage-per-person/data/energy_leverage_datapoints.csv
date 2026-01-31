@@ -1,0 +1,7 @@
+year,label,energy_total_GJ_per_person_year,energy_external_GJ_per_person_year,multiple_vs_metabolic,watts_per_person,watts_external,notes
+-9000,"foragers (Greenlandian anchor)",6.2,2.6,1.7222,196.4661,82.3890,"Representative anchor for predominantly foraging societies; total includes food + wood burning."
+-3000,"early agrarian states (Northgrippian anchor)",7.1,3.5,1.9722,224.9854,110.9083,"Representative anchor for early agrarian/state-level societies."
+1000,"Meghalayan average (Holocene to ~1950)",8.3,4.7,2.3056,263.0111,148.9340,"Long-run Holocene average to ~1950 as summarized in the source."
+1750,"pre-industrial (1670–1850 midpoint)",18.4,14.8,5.1111,583.0608,468.9837,"Pre-industrial interval midpoint; rising use of coal + water/steam precursors."
+1900,"industrial interval (1850–1950 midpoint)",27.2,23.6,7.5556,861.9160,747.8389,"Industrial interval midpoint; coal + oil/gas + early electrification."
+2000,"modern (since 1950 average; plotted as ~2000 anchor)",61.0,57.4,16.9444,1932.9734,1818.8962,"Post-1950 Anthropocene-era average per capita energy use (range varies by country/time)."
