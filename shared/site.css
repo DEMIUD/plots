@@ -270,4 +270,22 @@ footer a:hover {
         flex-direction: column;
         gap: 0.5rem;
     }
+
+    /* Mobile tables: scroll horizontally, tighter spacing */
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.8rem;
+    }
+
+    th, td {
+        padding: 0.4rem 0.5rem;
+        white-space: nowrap;
+    }
+
+    thead {
+        position: sticky;
+        top: 0;
+    }
 }

@@ -39,11 +39,15 @@
     <div class="description">
         <h2>The Four Lanes</h2>
         <table>
-            <tr><th>Lane</th><th>Metric</th><th>Trend</th><th>Key Flips</th></tr>
-            <tr><td class="lane-energy"><strong>Energy</strong></td><td>kcal/day</td><td>↑</td><td>Fire → Agriculture → Steam → Grid</td></tr>
-            <tr><td class="lane-coord"><strong>Coordination</strong></td><td>Max group</td><td>↑</td><td>Language → Writing → Print → Internet</td></tr>
-            <tr><td class="lane-memory"><strong>Memory</strong></td><td>bits/person</td><td>↑</td><td>Symbols → Writing → Print → AI</td></tr>
-            <tr><td class="lane-repl"><strong>Replication</strong></td><td>hrs/copy</td><td>↓</td><td>Scribes → Print → Digital → AI Gen</td></tr>
+            <thead>
+                <tr><th>Lane</th><th>Metric</th><th>Trend</th><th>Key Flips</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="lane-energy"><strong>Energy</strong></td><td>kcal/day</td><td>↑</td><td>Fire → Agriculture → Steam → Grid</td></tr>
+                <tr><td class="lane-coord"><strong>Coordination</strong></td><td>Max group</td><td>↑</td><td>Language → Writing → Print → Internet</td></tr>
+                <tr><td class="lane-memory"><strong>Memory</strong></td><td>bits/person</td><td>↑</td><td>Symbols → Writing → Print → AI</td></tr>
+                <tr><td class="lane-repl"><strong>Replication</strong></td><td>hrs/copy</td><td>↓</td><td>Scribes → Print → Digital → AI Gen</td></tr>
+            </tbody>
         </table>
 
         <h2>About</h2>
@@ -59,8 +63,17 @@
     </div>
 
     <footer>
-        Sources: OWID, Herculano-Houzel, Kaplan/Charnov | <a href="data/meta.json">meta.json</a> |
-        <a href="https://github.com/mschwar/plots">GitHub</a> | MIT
+        <p class="sources">
+            Sources:
+            <a href="https://ourworldindata.org/">Our World in Data</a> •
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2776484/">Herculano-Houzel</a> •
+            <a href="https://en.wikipedia.org/wiki/Life_history_theory">Kaplan/Charnov LHT</a>
+        </p>
+        <p>
+            <a href="data/meta.json">meta.json</a> |
+            <a href="https://github.com/mschwar/plots/tree/main/civilization-scaling">GitHub</a> |
+            MIT
+        </p>
     </footer>
 
     <script src="../shared/site.js"></script>

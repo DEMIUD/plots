@@ -33,9 +33,13 @@
     <div class="description">
         <h2>Dual Panels</h2>
         <table>
-            <tr><th>Panel</th><th>X-axis</th><th>Y-axis</th><th>Outlier</th></tr>
-            <tr><td><strong>Biology</strong></td><td>Body mass (kg)</td><td>Neurons/kg</td><td>Human (EQ~7)</td></tr>
-            <tr><td><strong>Tech</strong></td><td>Year</td><td>cps/$</td><td>AI FLOPs explosion</td></tr>
+            <thead>
+                <tr><th>Panel</th><th>X-axis</th><th>Y-axis</th><th>Outlier</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Biology</strong></td><td>Body mass (kg)</td><td>Neurons/kg</td><td>Human (EQ~7)</td></tr>
+                <tr><td><strong>Tech</strong></td><td>Year</td><td>cps/$</td><td>AI FLOPs explosion</td></tr>
+            </tbody>
         </table>
 
         <h2>About</h2>
@@ -50,8 +54,17 @@
     </div>
 
     <footer>
-        Sources: Herculano-Houzel, Kurzweil, Epoch AI | <a href="data/meta.json">meta.json</a> |
-        <a href="https://github.com/mschwar/plots">GitHub</a> | MIT
+        <p class="sources">
+            Sources:
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2776484/">Herculano-Houzel (2009)</a> •
+            <a href="https://en.wikipedia.org/wiki/Kleiber%27s_law">Kleiber's Law</a> •
+            Kurzweil (2005)
+        </p>
+        <p>
+            <a href="data/meta.json">meta.json</a> |
+            <a href="https://github.com/mschwar/plots/tree/main/energetic-scaling">GitHub</a> |
+            MIT
+        </p>
     </footer>
 
     <script src="../shared/site.js"></script>

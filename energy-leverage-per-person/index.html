@@ -37,11 +37,15 @@
     <div class="description">
         <h2>Era Progression</h2>
         <table>
-            <tr><th>Era</th><th>Year</th><th class="total">Total (W)</th><th>Multiplier</th></tr>
-            <tr><td>Foragers</td><td>-9000</td><td class="total">196 W</td><td>1.7×</td></tr>
-            <tr><td>Pre-industrial</td><td>1750</td><td class="total">583 W</td><td>5.1×</td></tr>
-            <tr><td>Industrial</td><td>1900</td><td class="total">862 W</td><td>7.6×</td></tr>
-            <tr><td><strong>Modern</strong></td><td>2000</td><td class="total"><strong>1,933 W</strong></td><td><strong>16.9×</strong></td></tr>
+            <thead>
+                <tr><th>Era</th><th>Year</th><th class="total">Total (W)</th><th>Multiplier</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Foragers</td><td>-9000</td><td class="total">196 W</td><td>1.7×</td></tr>
+                <tr><td>Pre-industrial</td><td>1750</td><td class="total">583 W</td><td>5.1×</td></tr>
+                <tr><td>Industrial</td><td>1900</td><td class="total">862 W</td><td>7.6×</td></tr>
+                <tr><td><strong>Modern</strong></td><td>2000</td><td class="total"><strong>1,933 W</strong></td><td><strong>16.9×</strong></td></tr>
+            </tbody>
         </table>
 
         <h2>About</h2>
@@ -56,8 +60,16 @@
     </div>
 
     <footer>
-        Sources: Nature synthesis, Smil | <a href="data/meta.json">meta.json</a> |
-        <a href="https://github.com/mschwar/plots">GitHub</a> | MIT
+        <p class="sources">
+            Sources:
+            <a href="https://www.nature.com/articles/s41467-024-53917-0">Nature synthesis (2024)</a> •
+            <a href="https://mitpress.mit.edu/9780262035774/energy-and-civilization/">Smil, Energy and Civilization (2017)</a>
+        </p>
+        <p>
+            <a href="data/meta.json">meta.json</a> |
+            <a href="https://github.com/mschwar/plots/tree/main/energy-leverage-per-person">GitHub</a> |
+            MIT
+        </p>
     </footer>
 
     <script src="../shared/site.js"></script>
