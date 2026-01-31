@@ -96,24 +96,24 @@ def create_static_chart(df):
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    export_dir = os.path.join(os.path.dirname(script_dir), 'export')
-    os.makedirs(export_dir, exist_ok=True)
+    output_dir = os.path.join(os.path.dirname(script_dir), 'output')
+    os.makedirs(output_dir, exist_ok=True)
 
     df = load_data()
     fig = create_static_chart(df)
 
     # Save PNG
-    png_path = os.path.join(export_dir, 'energy_leverage.png')
+    png_path = os.path.join(output_dir, 'energy_leverage.png')
     fig.savefig(png_path, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none')
     print(f"Saved: {png_path}")
 
     # Save high-res PNG
-    highres_path = os.path.join(export_dir, 'energy_leverage_highres.png')
+    highres_path = os.path.join(output_dir, 'energy_leverage_highres.png')
     fig.savefig(highres_path, dpi=400, bbox_inches='tight', facecolor='white', edgecolor='none')
     print(f"Saved: {highres_path}")
 
     # Save SVG
-    svg_path = os.path.join(export_dir, 'energy_leverage.svg')
+    svg_path = os.path.join(output_dir, 'energy_leverage.svg')
     fig.savefig(svg_path, format='svg', bbox_inches='tight', facecolor='white', edgecolor='none')
     print(f"Saved: {svg_path}")
 

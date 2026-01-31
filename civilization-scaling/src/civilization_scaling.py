@@ -5,94 +5,34 @@ Multi-lane log-time timeline (1M Years Ago to 2030+)
 """
 
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.lines import Line2D
 import os
 
-# ============================================================================
-# DATA BY LANE
-# ============================================================================
 
-energy_data = [
-    ("Early Hominid", 1000000, 500, "Prehistory", "Medium", ""),
-    ("Fire/Cooking", 800000, 2000, "Prehistory", "Transformative", "Cooking → Brains"),
-    ("Hunting Coop", 300000, 2500, "Prehistory", "High", ""),
-    ("Paleolithic", 50000, 3000, "Prehistory", "Medium", ""),
-    ("Agriculture", 12000, 5000, "Neolithic", "Transformative", "Surplus → Cities"),
-    ("Draft Animals", 8000, 8000, "Neolithic", "High", ""),
-    ("Irrigation", 5000, 12000, "Ancient", "High", ""),
-    ("Iron Tools", 3000, 15000, "Ancient", "Medium", ""),
-    ("Mills", 1000, 25000, "Pre-Modern", "High", ""),
-    ("Steam", 264, 50000, "Industrial", "Transformative", "Coal → Industry"),
-    ("Electricity", 144, 100000, "Industrial", "Transformative", ""),
-    ("Oil/ICE", 120, 200000, "Modern", "High", ""),
-    ("Nuclear", 74, 500000, "Modern", "High", ""),
-    ("Renewables", 24, 300000, "Digital", "High", ""),
-    ("AI Compute", 4, 1000000, "Digital", "High", ""),
-    ("Fusion (proj)", 0.1, 10000000, "Future", "Speculative", ""),
-]
+def load_data():
+    """Load civilization metrics from CSV."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(os.path.dirname(script_dir), 'data', 'civilization_metrics.csv')
+    return pd.read_csv(csv_path)
 
-coordination_data = [
-    ("Bands", 1000000, 30, "Prehistory", "Medium", ""),
-    ("Language", 250000, 50, "Prehistory", "Transformative", "Language → Myths"),
-    ("Ritual/Art", 50000, 150, "Prehistory", "High", "Dunbar ~150"),
-    ("Villages", 12000, 500, "Neolithic", "High", ""),
-    ("Chiefdoms", 7000, 2000, "Neolithic", "High", ""),
-    ("City-States", 5000, 10000, "Ancient", "Transformative", "Writing → Institutions"),
-    ("Empires", 2200, 1000000, "Ancient", "Transformative", ""),
-    ("Nations", 500, 10000000, "Pre-Modern", "High", "Print → Identity"),
-    ("Global Trade", 200, 100000000, "Industrial", "High", ""),
-    ("Multinationals", 74, 500000000, "Modern", "High", ""),
-    ("Internet", 44, 1000000000, "Digital", "Transformative", "Internet → Global"),
-    ("Social Platforms", 14, 3000000000, "Digital", "High", ""),
-    ("AI Coordination", 4, 5000000000, "Digital", "High", ""),
-    ("Global Mesh (proj)", 0.1, 8000000000, "Future", "Speculative", ""),
-]
 
-memory_data = [
-    ("Oral Only", 1000000, 100, "Prehistory", "Low", ""),
-    ("Language", 200000, 1000, "Prehistory", "Medium", ""),
-    ("Cave Art", 40000, 5000, "Prehistory", "High", "Symbols → External Mind"),
-    ("Proto-Writing", 8000, 10000, "Neolithic", "High", ""),
-    ("Writing", 5000, 50000, "Ancient", "Transformative", "Writing → Cumulative"),
-    ("Libraries", 2500, 500000, "Ancient", "High", ""),
-    ("Printing", 574, 10000000, "Pre-Modern", "Transformative", "Print → Science"),
-    ("Telegraph", 180, 100000000, "Industrial", "High", ""),
-    ("Radio/Film", 100, 1000000000, "Industrial", "High", ""),
-    ("TV", 74, 10000000000, "Modern", "High", ""),
-    ("PCs", 44, 100000000000, "Modern", "Transformative", "PC → Digital Self"),
-    ("Internet", 24, 1000000000000, "Digital", "Transformative", ""),
-    ("AI Synthesis", 4, 1e15, "Digital", "Transformative", "AI → Mind Auto"),
-    ("Neural (proj)", 0.1, 1e18, "Future", "Speculative", ""),
-]
-
-replication_data = [
-    ("Handcraft", 1000000, 1000, "Prehistory", "Low", ""),
-    ("Apprentice", 200000, 100, "Prehistory", "Medium", ""),
-    ("Molds", 8000, 10, "Neolithic", "High", ""),
-    ("Scribes", 5000, 50, "Ancient", "Medium", ""),
-    ("Printing", 574, 0.1, "Pre-Modern", "Transformative", "Print → Free Ideas"),
-    ("Factory", 200, 0.01, "Industrial", "Transformative", ""),
-    ("Mass Media", 100, 0.001, "Industrial", "High", ""),
-    ("Photocopy", 60, 0.0001, "Modern", "Medium", ""),
-    ("Digital", 44, 0.00001, "Digital", "Transformative", "Digital → Free Copy"),
-    ("Internet Dist", 24, 0.000001, "Digital", "High", ""),
-    ("AI Gen", 4, 1e-7, "Digital", "Transformative", "AI → Zero Cost"),
-    ("Molecular (proj)", 0.1, 1e-10, "Future", "Speculative", ""),
-]
-
-latency_data = [
-    ("Walking", 1000000, 86400000, "Prehistory", "Low", ""),
-    ("Horse/Ship", 3000, 864000, "Ancient", "High", ""),
-    ("Postal", 500, 86400, "Pre-Modern", "Medium", ""),
-    ("Telegraph", 180, 1000, "Industrial", "Transformative", "Telegraph → Real-Time"),
-    ("Telephone", 140, 100, "Industrial", "High", ""),
-    ("Radio/TV", 100, 10, "Modern", "High", ""),
-    ("Internet", 24, 50, "Digital", "Transformative", ""),
-    ("5G/Edge", 4, 5, "Digital", "High", ""),
-    ("Quantum (proj)", 0.1, 0.1, "Future", "Speculative", ""),
-]
+def get_lane_data(df, lane_name):
+    """Extract data for a specific lane as list of tuples."""
+    lane_df = df[df['Lane'] == lane_name].copy()
+    data = []
+    for _, row in lane_df.iterrows():
+        data.append((
+            row['Event'],
+            row['Years_Ago'],
+            row['Metric_Value'],
+            row['Era'],
+            row['Impact'],
+            row['Phase_Flip'] if pd.notna(row['Phase_Flip']) else ""
+        ))
+    return data
 
 # Colors
 LANE_COLORS = {
@@ -128,11 +68,17 @@ def years_ago_to_log_x(years_ago):
     return -np.log10(years_ago + 1)  # Negative so older is left
 
 
-def create_multilane_plot():
+def create_multilane_plot(df):
     """Create multi-lane civilization scaling plot."""
 
     fig, axes = plt.subplots(4, 1, figsize=(18, 14), sharex=True, dpi=150)
     fig.patch.set_facecolor('white')
+
+    # Load data for each lane from CSV
+    energy_data = get_lane_data(df, "Energy")
+    coordination_data = get_lane_data(df, "Coordination")
+    memory_data = get_lane_data(df, "Memory")
+    replication_data = get_lane_data(df, "Replication")
 
     lanes = [
         ("Energy", energy_data, "kcal/person/day", axes[0], True),
@@ -283,7 +229,11 @@ def main():
     output_dir = os.path.join(os.path.dirname(script_dir), 'output')
     os.makedirs(output_dir, exist_ok=True)
 
-    fig = create_multilane_plot()
+    # Load data from CSV
+    df = load_data()
+    print(f"Loaded {len(df)} records from CSV")
+
+    fig = create_multilane_plot(df)
     print("Created civilization scaling plot")
 
     fig.savefig(os.path.join(output_dir, 'civilization_scaling.png'), dpi=300,

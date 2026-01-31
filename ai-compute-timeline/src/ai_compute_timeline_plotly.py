@@ -281,7 +281,8 @@ def create_plotly_chart(records):
         paper_bgcolor='white',
         width=1400, height=800,
         margin=dict(r=200, t=100, b=80),
-        hovermode='closest'
+        hovermode='closest',
+        autosize=True
     )
 
     # Add frontier cluster bracket annotation

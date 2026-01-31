@@ -155,7 +155,8 @@ def create_interactive_chart(df):
         ),
         height=550,
         width=900,
-        margin=dict(b=120)
+        margin=dict(b=120),
+        autosize=True
     )
 
     # Caption annotation
@@ -178,14 +179,14 @@ def create_interactive_chart(df):
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    export_dir = os.path.join(os.path.dirname(script_dir), 'export')
-    os.makedirs(export_dir, exist_ok=True)
+    output_dir = os.path.join(os.path.dirname(script_dir), 'output')
+    os.makedirs(output_dir, exist_ok=True)
 
     df = load_data()
     fig = create_interactive_chart(df)
 
     # Save interactive HTML
-    html_path = os.path.join(export_dir, 'energy_leverage_interactive.html')
+    html_path = os.path.join(output_dir, 'energy_leverage_interactive.html')
     fig.write_html(html_path)
     print(f"Saved: {html_path}")
 

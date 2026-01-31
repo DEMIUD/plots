@@ -1,0 +1,6 @@
+entity,year,flops,impact,notes
+AlexNet 2012,2012,6e17,High,"Deep learning breakthrough; ImageNet"
+GPT-2 2019,2019,1e19,High,"Emergent scaling behaviors"
+GPT-3 2020,2020,3.14e23,Transformative,"175B params; few-shot learning"
+GPT-4 2023,2023,2e25,Transformative,"Multimodal frontier"
+Grok-4 2026,2026,5e26,Transformative,"Projected frontier model"

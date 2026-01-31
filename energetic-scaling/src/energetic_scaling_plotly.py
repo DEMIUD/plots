@@ -7,6 +7,7 @@ Interactive Plotly version with hover tooltips.
 """
 
 import numpy as np
+import pandas as pd
 import os
 
 try:
@@ -17,88 +18,59 @@ except ImportError:
     PLOTLY_AVAILABLE = False
     print("Plotly not installed. Run: pip install plotly")
 
-# ============================================================================
-# BIOLOGICAL DATA
-# ============================================================================
-bio_data = [
-    {"entity": "Crocodile", "mass": 90, "neurons": 8.3e7, "per_kg": 9.22e5,
-     "group": "Reptiles", "impact": "Low", "notes": "Low neuron density; ~20x fewer than endotherms"},
-    {"entity": "Goldcrest", "mass": 0.0045, "neurons": 1.64e8, "per_kg": 3.64e10,
-     "group": "Birds", "impact": "High", "notes": "Smallest bird, extreme density"},
-    {"entity": "Corvid/Rook", "mass": 0.5, "neurons": 2e9, "per_kg": 4e9,
-     "group": "Birds", "impact": "High", "notes": "Primate-like forebrain neurons"},
-    {"entity": "Parrot (African Grey)", "mass": 0.4, "neurons": 3e9, "per_kg": 7.5e9,
-     "group": "Birds", "impact": "High", "notes": "High cognition, tool use"},
-    {"entity": "Pigeon", "mass": 0.35, "neurons": 3.1e8, "per_kg": 8.86e8,
-     "group": "Birds", "impact": "Medium", "notes": "Common bird baseline"},
-    {"entity": "Mouse", "mass": 0.02, "neurons": 7.1e7, "per_kg": 3.55e9,
-     "group": "Mammals", "impact": "Medium", "notes": "Rodent baseline"},
-    {"entity": "Rat", "mass": 0.3, "neurons": 2e8, "per_kg": 6.67e8,
-     "group": "Mammals", "impact": "Medium", "notes": "Rodent"},
-    {"entity": "Cat", "mass": 4, "neurons": 7.6e8, "per_kg": 1.9e8,
-     "group": "Mammals", "impact": "Medium", "notes": "Carnivore"},
-    {"entity": "Dog", "mass": 15, "neurons": 5.3e8, "per_kg": 3.5e7,
-     "group": "Mammals", "impact": "Medium", "notes": "Carnivore"},
-    {"entity": "Elephant", "mass": 4000, "neurons": 2.57e11, "per_kg": 6.43e7,
-     "group": "Mammals", "impact": "High", "notes": "Largest land mammal; 257B neurons but low density"},
-    {"entity": "Marmoset", "mass": 0.3, "neurons": 1.4e9, "per_kg": 4.67e9,
-     "group": "Primates", "impact": "High", "notes": "Small primate, linear scaling"},
-    {"entity": "Macaque", "mass": 7, "neurons": 6.4e9, "per_kg": 9.14e8,
-     "group": "Primates", "impact": "High", "notes": "Old World monkey"},
-    {"entity": "Chimpanzee", "mass": 50, "neurons": 2.8e10, "per_kg": 5.6e8,
-     "group": "Primates", "impact": "High", "notes": "Great ape, closest relative"},
-    {"entity": "Human", "mass": 70, "neurons": 8.6e10, "per_kg": 1.23e9,
-     "group": "Primates", "impact": "Transformative", "notes": "86B neurons, EQ~7 (outlier)"},
-    {"entity": "Lizard", "mass": 0.1, "neurons": 1e7, "per_kg": 1e8,
-     "group": "Reptiles", "impact": "Low", "notes": "Small reptile baseline"},
-]
 
-# ============================================================================
-# TECH DATA
-# ============================================================================
-tech_data = [
-    {"entity": "Zeus II 1939", "year": 1939, "cps": 6.5e-6, "category": "Hardware",
-     "impact": "Low", "notes": "Kurzweil baseline; relay computer"},
-    {"entity": "ENIAC 1945", "year": 1945, "cps": 1e-4, "category": "Hardware",
-     "impact": "Medium", "notes": "Vacuum tube era"},
-    {"entity": "UNIVAC 1951", "year": 1951, "cps": 1e-3, "category": "Hardware",
-     "impact": "Medium", "notes": "First commercial computer"},
-    {"entity": "IBM 7090 1959", "year": 1959, "cps": 0.1, "category": "Hardware",
-     "impact": "Medium", "notes": "Transistor mainframe"},
-    {"entity": "Intel 4004 1971", "year": 1971, "cps": 10, "category": "Hardware",
-     "impact": "High", "notes": "First microprocessor"},
-    {"entity": "Intel 8086 1978", "year": 1978, "cps": 100, "category": "Hardware",
-     "impact": "Medium", "notes": "PC architecture foundation"},
-    {"entity": "Intel 386 1985", "year": 1985, "cps": 1e4, "category": "Hardware",
-     "impact": "Medium", "notes": "32-bit era"},
-    {"entity": "Pentium 1993", "year": 1993, "cps": 1e6, "category": "Hardware",
-     "impact": "Medium", "notes": "Superscalar x86"},
-    {"entity": "Pentium 4 2000", "year": 2000, "cps": 1e8, "category": "Hardware",
-     "impact": "Medium", "notes": "GHz race peak"},
-    {"entity": "Core i7 2008", "year": 2008, "cps": 1e9, "category": "Hardware",
-     "impact": "High", "notes": "Multi-core era"},
-    {"entity": "NVIDIA V100 2017", "year": 2017, "cps": 1e10, "category": "Hardware",
-     "impact": "High", "notes": "GPU for deep learning"},
-    {"entity": "NVIDIA A100 2020", "year": 2020, "cps": 5e10, "category": "Hardware",
-     "impact": "High", "notes": "AI accelerator"},
-    {"entity": "NVIDIA B200 2024", "year": 2024, "cps": 5e11, "category": "Hardware",
-     "impact": "Transformative", "notes": "~75 quadrillion-fold increase since 1939"},
-    {"entity": "Projected 2026", "year": 2026, "cps": 2e12, "category": "Hardware",
-     "impact": "High", "notes": "Kurzweil trajectory projection"},
-]
+def load_biological_data():
+    """Load biological data from CSV."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(os.path.dirname(script_dir), 'data', 'biological_data.csv')
+    df = pd.read_csv(csv_path)
+    data = []
+    for _, row in df.iterrows():
+        data.append({
+            "entity": row['entity'],
+            "mass": float(row['mass_kg']),
+            "neurons": float(row['neurons']),
+            "per_kg": float(row['neurons_per_kg']),
+            "group": row['group'],
+            "impact": row['impact'],
+            "notes": row['notes']
+        })
+    return data
 
-ai_data = [
-    {"entity": "AlexNet 2012", "year": 2012, "flops": 6e17, "impact": "High",
-     "notes": "Deep learning breakthrough; ImageNet"},
-    {"entity": "GPT-2 2019", "year": 2019, "flops": 1e19, "impact": "High",
-     "notes": "Emergent scaling behaviors"},
-    {"entity": "GPT-3 2020", "year": 2020, "flops": 3.14e23, "impact": "Transformative",
-     "notes": "175B params; few-shot learning"},
-    {"entity": "GPT-4 2023", "year": 2023, "flops": 2e25, "impact": "Transformative",
-     "notes": "Multimodal frontier"},
-    {"entity": "Grok-4 2026", "year": 2026, "flops": 5e26, "impact": "Transformative",
-     "notes": "Projected frontier model"},
-]
+
+def load_hardware_data():
+    """Load hardware data from CSV."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(os.path.dirname(script_dir), 'data', 'hardware_data.csv')
+    df = pd.read_csv(csv_path)
+    data = []
+    for _, row in df.iterrows():
+        data.append({
+            "entity": row['entity'],
+            "year": int(row['year']),
+            "cps": float(row['cps']),
+            "category": row['category'],
+            "impact": row['impact'],
+            "notes": row['notes']
+        })
+    return data
+
+
+def load_ai_data():
+    """Load AI model data from CSV."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(os.path.dirname(script_dir), 'data', 'ai_model_data.csv')
+    df = pd.read_csv(csv_path)
+    data = []
+    for _, row in df.iterrows():
+        data.append({
+            "entity": row['entity'],
+            "year": int(row['year']),
+            "flops": float(row['flops']),
+            "impact": row['impact'],
+            "notes": row['notes'] if 'notes' in row else ""
+        })
+    return data
 
 BIO_COLORS = {
     "Reptiles": "#7F8C8D",
@@ -120,7 +92,7 @@ IMPACT_SIZES = {
 }
 
 
-def create_plotly_chart():
+def create_plotly_chart(bio_data, tech_data, ai_data):
     """Create interactive dual-panel Plotly chart."""
 
     fig = make_subplots(
@@ -281,7 +253,8 @@ def create_plotly_chart():
         paper_bgcolor='white',
         width=1500, height=700,
         margin=dict(t=120, b=150),
-        hovermode='closest'
+        hovermode='closest',
+        autosize=True
     )
 
     # Footnote
@@ -306,7 +279,13 @@ def main():
     output_dir = os.path.join(os.path.dirname(script_dir), 'output')
     os.makedirs(output_dir, exist_ok=True)
 
-    fig = create_plotly_chart()
+    # Load data from CSV
+    bio_data = load_biological_data()
+    tech_data = load_hardware_data()
+    ai_data = load_ai_data()
+    print(f"Loaded {len(bio_data)} biological, {len(tech_data)} hardware, {len(ai_data)} AI records")
+
+    fig = create_plotly_chart(bio_data, tech_data, ai_data)
     print("Created interactive energetic scaling chart")
 
     output_path = os.path.join(output_dir, 'energetic_scaling_interactive.html')

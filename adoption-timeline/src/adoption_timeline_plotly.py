@@ -203,7 +203,8 @@ def create_chart(df, export_mode=False):
         width=900 if export_mode else 1000,
         height=550 if export_mode else 600,
         margin=dict(t=100, b=80, l=60, r=40),
-        hovermode='closest'
+        hovermode='closest',
+        autosize=True
     )
 
     # Caption below chart (not inside canvas)

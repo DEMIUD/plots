@@ -7,64 +7,65 @@ Dual-panel log-log visualization comparing biological allometry with tech scalin
 """
 
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.lines import Line2D
 from scipy import stats
 import os
 
-# ============================================================================
-# BIOLOGICAL DATA: Neural scaling
-# ============================================================================
-bio_data = [
-    # (Entity, Body_Mass_kg, Total_Neurons, Neurons_per_kg, Group, Impact, Notes)
-    ("Crocodile", 90, 8.3e7, 9.22e5, "Reptiles", "Low", "Low neuron density"),
-    ("Goldcrest", 0.0045, 1.64e8, 3.64e10, "Birds", "High", "Smallest bird, high density"),
-    ("Corvid/Rook", 0.5, 2e9, 4e9, "Birds", "High", "Primate-like forebrain"),
-    ("Mouse", 0.02, 7.1e7, 3.55e9, "Mammals", "Medium", "Rodent baseline"),
-    ("Elephant", 4000, 2.57e11, 6.43e7, "Mammals", "High", "Large absolute, low per kg"),
-    ("Human", 70, 8.6e10, 1.23e9, "Primates", "Transformative", "EQ~7, 86B neurons"),
-    ("Marmoset", 0.3, 1.4e9, 4.67e9, "Primates", "High", "Linear primate scaling"),
-    # Additional data points for better trend lines
-    ("Rat", 0.3, 2e8, 6.67e8, "Mammals", "Medium", "Rodent"),
-    ("Cat", 4, 7.6e8, 1.9e8, "Mammals", "Medium", "Carnivore"),
-    ("Dog", 15, 5.3e8, 3.5e7, "Mammals", "Medium", "Carnivore"),
-    ("Macaque", 7, 6.4e9, 9.14e8, "Primates", "High", "Old World monkey"),
-    ("Chimpanzee", 50, 2.8e10, 5.6e8, "Primates", "High", "Great ape"),
-    ("Parrot (African Grey)", 0.4, 3e9, 7.5e9, "Birds", "High", "High cognition"),
-    ("Pigeon", 0.35, 3.1e8, 8.86e8, "Birds", "Medium", "Common bird"),
-    ("Lizard", 0.1, 1e7, 1e8, "Reptiles", "Low", "Small reptile"),
-]
 
-# ============================================================================
-# TECH DATA: Compute efficiency scaling (Kurzweil-inspired)
-# ============================================================================
-tech_data = [
-    # (Entity, Year, CPS_per_Dollar, Category, Impact, Notes)
-    ("Zeus II 1939", 1939, 6.5e-6, "Hardware", "Low", "Early baseline"),
-    ("ENIAC 1945", 1945, 1e-4, "Hardware", "Medium", "Vacuum tube era"),
-    ("UNIVAC 1951", 1951, 1e-3, "Hardware", "Medium", "Commercial computer"),
-    ("IBM 7090 1959", 1959, 0.1, "Hardware", "Medium", "Transistor mainframe"),
-    ("Intel 4004 1971", 1971, 10, "Hardware", "High", "Microprocessor start"),
-    ("Intel 8086 1978", 1978, 100, "Hardware", "Medium", "PC era begins"),
-    ("Intel 386 1985", 1985, 1e4, "Hardware", "Medium", "32-bit era"),
-    ("Pentium 1993", 1993, 1e6, "Hardware", "Medium", "CISC dominance"),
-    ("Pentium 4 2000", 2000, 1e8, "Hardware", "Medium", "GHz race"),
-    ("Core i7 2008", 2008, 1e9, "Hardware", "High", "Multi-core era"),
-    ("NVIDIA V100 2017", 2017, 1e10, "Hardware", "High", "GPU compute"),
-    ("NVIDIA A100 2020", 2020, 5e10, "Hardware", "High", "AI accelerator"),
-    ("NVIDIA B200 2024", 2024, 5e11, "Hardware", "Transformative", "75 quadrillion-fold"),
-    ("Projected 2026", 2026, 2e12, "Hardware", "High", "Kurzweil trajectory"),
-]
+def load_biological_data():
+    """Load biological data from CSV."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(os.path.dirname(script_dir), 'data', 'biological_data.csv')
+    df = pd.read_csv(csv_path)
+    data = []
+    for _, row in df.iterrows():
+        data.append((
+            row['entity'],
+            float(row['mass_kg']),
+            float(row['neurons']),
+            float(row['neurons_per_kg']),
+            row['group'],
+            row['impact'],
+            row['notes']
+        ))
+    return data
 
-# AI model FLOPs (for secondary view)
-ai_flops = [
-    ("AlexNet 2012", 2012, 6e17, "High"),
-    ("GPT-2 2019", 2019, 1e19, "High"),
-    ("GPT-3 2020", 2020, 3.14e23, "Transformative"),
-    ("GPT-4 2023", 2023, 2e25, "Transformative"),
-    ("Grok-4 2026", 2026, 5e26, "Transformative"),
-]
+
+def load_hardware_data():
+    """Load hardware data from CSV."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(os.path.dirname(script_dir), 'data', 'hardware_data.csv')
+    df = pd.read_csv(csv_path)
+    data = []
+    for _, row in df.iterrows():
+        data.append((
+            row['entity'],
+            int(row['year']),
+            float(row['cps']),
+            row['category'],
+            row['impact'],
+            row['notes']
+        ))
+    return data
+
+
+def load_ai_data():
+    """Load AI model data from CSV."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(os.path.dirname(script_dir), 'data', 'ai_model_data.csv')
+    df = pd.read_csv(csv_path)
+    data = []
+    for _, row in df.iterrows():
+        data.append((
+            row['entity'],
+            int(row['year']),
+            float(row['flops']),
+            row['impact']
+        ))
+    return data
 
 # ============================================================================
 # COLOR SCHEMES
@@ -89,7 +90,7 @@ IMPACT_SIZES = {
 }
 
 
-def create_dual_panel_plot():
+def create_dual_panel_plot(bio_data, tech_data, ai_flops):
     """Create the dual-panel visualization."""
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 9), dpi=150)
@@ -317,8 +318,14 @@ def main():
     output_dir = os.path.join(os.path.dirname(script_dir), 'output')
     os.makedirs(output_dir, exist_ok=True)
 
+    # Load data from CSV
+    bio_data = load_biological_data()
+    tech_data = load_hardware_data()
+    ai_flops = load_ai_data()
+    print(f"Loaded {len(bio_data)} biological, {len(tech_data)} hardware, {len(ai_flops)} AI records")
+
     # Create plot
-    fig = create_dual_panel_plot()
+    fig = create_dual_panel_plot(bio_data, tech_data, ai_flops)
     print("Created dual-panel energetic scaling plot")
 
     # Save outputs
