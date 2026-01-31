@@ -4,124 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Compute Timeline (1900–2026) – Training FLOPs Milestones</title>
-    <style>
-        * { box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: #fafafa;
-            color: #333;
-            line-height: 1.6;
-        }
-        .breadcrumb {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        .breadcrumb a { color: #2563eb; text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
-        h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #1a1a1a; }
-        .subtitle { font-size: 1.1rem; color: #666; margin-bottom: 1.5rem; }
-        .main-image {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin: 1.5rem 0;
-        }
-        .links {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin: 1.5rem 0;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-        }
-        .links a {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .links a:hover { text-decoration: underline; }
-        .companion {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border: 1px solid #bae6fd;
-            border-radius: 8px;
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-        }
-        .companion strong { color: #0369a1; }
-        .companion a { color: #0369a1; font-weight: 500; }
-        .description { background: white; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
-        .description h2 { margin-top: 0; font-size: 1.3rem; }
-        footer {
-            margin-top: 3rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-            padding: 1.5rem;
-            border-top: 1px solid #ddd;
-        }
-        footer a { color: #2563eb; text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-    </style>
+    <link rel="stylesheet" href="../shared/site.css">
 </head>
 <body>
-    <div class="breadcrumb">
-        <a href="../">← Back to Plots</a>
+    <div class="nav-bar">
+        <a href="../">&larr; Back to Plots</a>
     </div>
 
-    <h1>AI Compute Timeline (1900–2026)</h1>
-    <p class="subtitle">Training FLOPs for Key AI Milestones – from vacuum tubes to frontier models</p>
-    <p style="font-size: 0.95rem; color: #666; font-style: italic;">Companion to <a href="../adoption-timeline/">Accelerating Paradigms</a> – that shows downward adoption compression; this shows upward compute explosion.</p>
+    <h1>AI Compute Timeline</h1>
+    <p class="subtitle">Training FLOPs for Key AI Milestones (1900–2026)</p>
 
     <a href="output/ai_compute_timeline_interactive.html">
         <img src="output/ai_compute_timeline_highres.png" alt="AI Compute Timeline" class="main-image">
     </a>
 
     <div class="links">
-        <a href="output/ai_compute_timeline_interactive.html">🖱️ View Full Interactive Version (Plotly – Hover/Zoom)</a>
-        <a href="output/ai_compute_timeline_highres.png">📷 High-res PNG</a>
-        <a href="output/ai_compute_timeline.svg">📐 SVG Vector</a>
-        <a href="data/ai_milestones.csv">📊 Source Data (CSV)</a>
+        <a href="output/ai_compute_timeline_interactive.html">Interactive</a>
+        <a href="output/ai_compute_timeline_highres.png">PNG</a>
+        <a href="output/ai_compute_timeline.svg">SVG</a>
+        <a href="data/ai_milestones.csv">Data (CSV)</a>
+        <a href="data/meta.json">Metadata</a>
     </div>
 
-    <div class="highlight" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 1px solid #fcd34d; border-radius: 8px; padding: 1rem 1.5rem; margin: 1.5rem 0;">
-        <strong>💡 Tip:</strong> Zoom recommended for 2010+ frontier cluster (10²⁴–10²⁷+ range) to see individual model labels clearly.
-    </div>
-
-    <div class="companion">
-        <strong>See companion plot:</strong>
-        <a href="../adoption-timeline/">Accelerating Paradigms – Adoption Timeline</a>
-        — shows how adoption timelines compressed to enable this compute explosion.
+    <div class="highlight">
+        <strong>Key insight:</strong> Training compute spans 27 orders of magnitude (10³ → 10²⁷ FLOPs) over ~125 years. The 2010+ frontier cluster shows the steepest acceleration.
     </div>
 
     <div class="description">
-        <h2>About This Visualization</h2>
-        <p>This semi-logarithmic timeline shows the exponential growth in AI training compute over 125+ years, spanning <strong>27 orders of magnitude</strong> from early computing proxies (~10³ FLOPs) to frontier models (~10²⁷ FLOPs).</p>
-
-        <h3>Key Features</h3>
+        <h2>About</h2>
+        <p>Semi-log timeline showing exponential growth in AI training compute from early vacuum tubes to frontier models.</p>
         <ul>
-            <li><strong>50 milestones</strong> from 1904 (Vacuum Tube) to 2026 (speculative Omni-modal AI)</li>
-            <li><strong>Color-coded categories:</strong> Hardware, AI Milestone, Model Release, Infrastructure, etc.</li>
-            <li><strong>Impact-sized markers:</strong> Transformative > High > Medium</li>
-            <li><strong>Era shading:</strong> Mechanical & Theoretical → Reasoning & Agentic</li>
-            <li><strong>Moore's Law reference:</strong> Dashed line showing transistor doubling trajectory</li>
-            <li><strong>Pre/Post 2010 distinction:</strong> Dashed line (proxy values) vs solid (actual training FLOPs)</li>
+            <li>50 milestones from 1904 to 2026</li>
+            <li>Color by category (Hardware, Model, Infrastructure)</li>
+            <li>Size by impact (Transformative > High > Medium)</li>
+            <li>Dashed pre-2010 = proxy values; solid post-2010 = actual training FLOPs</li>
         </ul>
+    </div>
 
-        <h3>Data Sources</h3>
-        <p>Epoch AI, Our World in Data, scaling reports. Pre-2010 values are rough proxies. Post-2023 estimates based on published research. Speculative 2026+ points marked with diamonds.</p>
+    <div class="companion">
+        <strong>Related:</strong>
+        <a href="../adoption-timeline/">Adoption Timeline</a> |
+        <a href="../energetic-scaling/">Energetic Scaling</a>
+        — Shows ecosystem acceleration enabling this compute explosion.
     </div>
 
     <footer>
-        <p>
-            Sources in <a href="https://github.com/mschwar/plots/tree/main/ai-compute-timeline">README</a> |
-            Built with Plotly & Python |
-            <a href="https://github.com/mschwar/plots">GitHub Repo</a> |
-            MIT License | Last updated Jan 2026
-        </p>
+        Sources: Epoch AI, OWID | <a href="data/meta.json">meta.json</a> |
+        <a href="https://github.com/mschwar/plots">GitHub</a> | MIT
     </footer>
+
+    <script src="../shared/site.js"></script>
 </body>
 </html>

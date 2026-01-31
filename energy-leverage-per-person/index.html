@@ -4,35 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Energy Leverage per Person – From ~2× to ~17× Metabolic Baseline</title>
+    <link rel="stylesheet" href="../shared/site.css">
     <style>
-        * { box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 1000px; margin: 0 auto; padding: 2rem;
-            background: #fafafa; color: #333; line-height: 1.6;
-        }
-        .breadcrumb { font-size: 0.9rem; margin-bottom: 1rem; }
-        .breadcrumb a { color: #2563eb; text-decoration: none; }
-        h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-        .subtitle { font-size: 1rem; color: #666; margin-bottom: 1rem; }
-        .main-image { width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 1.5rem 0; }
-        .links { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0; padding: 1rem; background: white; border-radius: 8px; }
-        .links a { color: #2563eb; text-decoration: none; font-weight: 500; }
-        .highlight { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 1px solid #fcd34d; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
-        .companion { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 1px solid #86efac; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
-        .description { background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; }
-        .description h2 { margin-top: 0; font-size: 1.2rem; }
-        table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
-        th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid #eee; }
-        th { background: #f5f5f5; }
         .total { color: #E67E22; }
         .external { color: #3498DB; }
-        footer { margin-top: 2rem; text-align: center; font-size: 0.85rem; color: #666; padding: 1rem; border-top: 1px solid #ddd; }
-        footer a { color: #2563eb; }
     </style>
 </head>
 <body>
-    <div class="breadcrumb"><a href="../">← Back to Plots</a></div>
+    <div class="nav-bar">
+        <a href="../">&larr; Back to Plots</a>
+    </div>
 
     <h1>Energy Leverage per Person</h1>
     <p class="subtitle">From ~2× to ~17× metabolic baseline (foragers → modern)</p>
@@ -42,47 +23,43 @@
     </a>
 
     <div class="links">
-        <a href="export/energy_leverage_interactive.html">🖱️ Interactive (Hover/Zoom)</a>
-        <a href="export/energy_leverage_highres.png">📷 High-res PNG</a>
-        <a href="export/energy_leverage.svg">📐 SVG</a>
-        <a href="data/energy_leverage_datapoints.csv">📊 CSV Data</a>
+        <a href="export/energy_leverage_interactive.html">Interactive</a>
+        <a href="export/energy_leverage_highres.png">PNG</a>
+        <a href="export/energy_leverage.svg">SVG</a>
+        <a href="data/energy_leverage_datapoints.csv">Data (CSV)</a>
+        <a href="data/meta.json">Metadata</a>
     </div>
 
     <div class="highlight">
-        <strong>💡 Key Insight:</strong> Humans went from ~1–2× body energy (foragers) to ~17× body energy (modern). The post-1750 coal/steam and post-1950 oil/electricity jumps are the main visual story.
+        <strong>Key insight:</strong> Humans went from ~1–2× body energy (foragers) to ~17× (modern). Post-1750 coal/steam and post-1950 oil/electricity jumps dominate the visual story.
     </div>
 
     <div class="description">
         <h2>Era Progression</h2>
         <table>
-            <tr><th>Era</th><th>Year</th><th class="total">Total (W)</th><th class="external">External (W)</th><th>Multiplier</th></tr>
-            <tr><td>Foragers</td><td>-9000</td><td class="total">196 W</td><td class="external">82 W</td><td>1.7×</td></tr>
-            <tr><td>Early agrarian</td><td>-3000</td><td class="total">225 W</td><td class="external">111 W</td><td>2.0×</td></tr>
-            <tr><td>Holocene avg</td><td>1000</td><td class="total">263 W</td><td class="external">149 W</td><td>2.3×</td></tr>
-            <tr><td>Pre-industrial</td><td>1750</td><td class="total">583 W</td><td class="external">469 W</td><td>5.1×</td></tr>
-            <tr><td>Industrial</td><td>1900</td><td class="total">862 W</td><td class="external">748 W</td><td>7.6×</td></tr>
-            <tr><td><strong>Modern</strong></td><td>2000</td><td class="total"><strong>1,933 W</strong></td><td class="external"><strong>1,819 W</strong></td><td><strong>16.9×</strong></td></tr>
+            <tr><th>Era</th><th>Year</th><th class="total">Total (W)</th><th>Multiplier</th></tr>
+            <tr><td>Foragers</td><td>-9000</td><td class="total">196 W</td><td>1.7×</td></tr>
+            <tr><td>Pre-industrial</td><td>1750</td><td class="total">583 W</td><td>5.1×</td></tr>
+            <tr><td>Industrial</td><td>1900</td><td class="total">862 W</td><td>7.6×</td></tr>
+            <tr><td><strong>Modern</strong></td><td>2000</td><td class="total"><strong>1,933 W</strong></td><td><strong>16.9×</strong></td></tr>
         </table>
 
-        <h2>Metric Definitions</h2>
-        <ul>
-            <li><strong>Total Energy:</strong> All energy a person commands (food + external)</li>
-            <li><strong>External Energy:</strong> Total minus metabolic baseline (~3.6 GJ/yr)</li>
-            <li><strong>Multiplier:</strong> How many "body equivalents" of energy each person controls</li>
-            <li><strong>Watts:</strong> Continuous power equivalent (easier to intuit than GJ/year)</li>
-        </ul>
+        <h2>About</h2>
+        <p>Two lines on log scale: total energy (orange) and external energy (blue), with metabolic baseline reference (~114 W). Shows how fossil fuels and electrification multiplied human energy command.</p>
     </div>
 
     <div class="companion">
-        <strong>Related plots:</strong>
+        <strong>Related:</strong>
         <a href="../energetic-scaling/">Energetic Scaling</a> |
         <a href="../civilization-scaling/">Civilization Scaling</a>
         — Together showing how energy leverage enables civilizational complexity.
     </div>
 
     <footer>
-        Sources: Nature synthesis (per-capita intervals); Smil (metabolic baseline) |
-        <a href="https://github.com/mschwar/plots">GitHub</a> | MIT | Jan 2026
+        Sources: Nature synthesis, Smil | <a href="data/meta.json">meta.json</a> |
+        <a href="https://github.com/mschwar/plots">GitHub</a> | MIT
     </footer>
+
+    <script src="../shared/site.js"></script>
 </body>
 </html>
