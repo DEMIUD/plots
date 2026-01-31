@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plots – Interactive Timelines of Exponential Tech Progress</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #fafafa;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .visualizations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .card-content {
+            padding: 1.5rem;
+        }
+        .card h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+            color: #1a1a1a;
+        }
+        .card p {
+            margin: 0 0 1rem 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+        .card .links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .card .links a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .card .links a:hover {
+            text-decoration: underline;
+        }
+        .why-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .why-section h2 {
+            margin-top: 0;
+            color: #1a1a1a;
+        }
+        .why-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .why-section th, .why-section td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .why-section th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            padding: 1.5rem;
+            border-top: 1px solid #ddd;
+        }
+        footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Plots</h1>
+    <p class="subtitle">Interactive timelines of exponential tech progress</p>
+
+    <div class="visualizations">
+        <div class="card">
+            <a href="ai-compute-timeline/output/ai_compute_timeline_interactive.html">
+                <img src="ai-compute-timeline/output/ai_compute_timeline_highres.png" alt="AI Compute Timeline">
+            </a>
+            <div class="card-content">
+                <h2>1. AI Compute Timeline (1900–2026)</h2>
+                <p>Training FLOPs milestones for AI history – from vacuum tubes to frontier models. Shows exponential <strong>growth</strong> in compute.</p>
+                <div class="links">
+                    <a href="ai-compute-timeline/output/ai_compute_timeline_interactive.html">Interactive HTML</a>
+                    <a href="ai-compute-timeline/output/ai_compute_timeline_highres.png">PNG</a>
+                    <a href="ai-compute-timeline/output/ai_compute_timeline.svg">SVG</a>
+                    <a href="ai-compute-timeline/">Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <a href="adoption-timeline/output/adoption_timeline_interactive.html">
+                <img src="adoption-timeline/output/adoption_timeline_highres.png" alt="Adoption Timeline">
+            </a>
+            <div class="card-content">
+                <h2>2. Accelerating Paradigms (1957–2030+)</h2>
+                <p>Time to ~50M users adoption – from years to days. Shows exponential <strong>compression</strong> in adoption timelines.</p>
+                <div class="links">
+                    <a href="adoption-timeline/output/adoption_timeline_interactive.html">Interactive HTML</a>
+                    <a href="adoption-timeline/output/adoption_timeline_highres.png">PNG</a>
+                    <a href="adoption-timeline/output/adoption_timeline.svg">SVG</a>
+                    <a href="adoption-timeline/">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="why-section">
+        <h2>Why These Plots?</h2>
+        <table>
+            <tr>
+                <th>Timeline</th>
+                <th>Shows</th>
+                <th>Trend</th>
+            </tr>
+            <tr>
+                <td><strong>Compute</strong></td>
+                <td>Training FLOPs (10⁰ → 10²⁷)</td>
+                <td>Exponential <em>growth</em> ↑</td>
+            </tr>
+            <tr>
+                <td><strong>Adoption</strong></td>
+                <td>Time to 50M users</td>
+                <td>Exponential <em>compression</em> ↓</td>
+            </tr>
+        </table>
+        <p>Together they illustrate how infrastructure acceleration enables AI scale, and how AI in turn accelerates adoption of new paradigms.</p>
+        <p>Inspired by Kurzweil, <a href="https://epochai.org/">Epoch AI</a>, <a href="https://www.statista.com/">Statista</a>, <a href="http://www.asymco.com/">Asymco</a>.</p>
+    </div>
+
+    <footer>
+        <p>
+            Sources in subdir READMEs | Built with Plotly & Python |
+            <a href="https://github.com/mschwar/plots">GitHub Repo</a> |
+            MIT License | Last updated Jan 2026
+        </p>
+    </footer>
+</body>
+</html>
