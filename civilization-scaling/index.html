@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaling Civilization – Energy, Coordination, Memory, Replication</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1000px; margin: 0 auto; padding: 2rem;
+            background: #fafafa; color: #333; line-height: 1.6;
+        }
+        .breadcrumb { font-size: 0.9rem; margin-bottom: 1rem; }
+        .breadcrumb a { color: #2563eb; text-decoration: none; }
+        h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .subtitle { font-size: 1rem; color: #666; margin-bottom: 1rem; }
+        .main-image { width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 1.5rem 0; }
+        .links { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0; padding: 1rem; background: white; border-radius: 8px; }
+        .links a { color: #2563eb; text-decoration: none; font-weight: 500; }
+        .highlight { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 1px solid #fcd34d; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+        .companion { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 1px solid #86efac; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+        .description { background: white; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; }
+        .description h2 { margin-top: 0; font-size: 1.2rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+        th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #f5f5f5; }
+        .lane-energy { color: #E67E22; }
+        .lane-coord { color: #27AE60; }
+        .lane-memory { color: #3498DB; }
+        .lane-repl { color: #9B59B6; }
+        footer { margin-top: 2rem; text-align: center; font-size: 0.85rem; color: #666; padding: 1rem; border-top: 1px solid #ddd; }
+        footer a { color: #2563eb; }
+    </style>
+</head>
+<body>
+    <div class="breadcrumb"><a href="../">← Back to Plots</a></div>
+
+    <h1>Scaling Civilization</h1>
+    <p class="subtitle">Energy, Coordination, Memory, and Replication over Log-Time (1M Years → 2030+)</p>
+
+    <a href="output/civilization_scaling_interactive.html">
+        <img src="output/civilization_scaling_highres.png" alt="Civilization Scaling" class="main-image">
+    </a>
+
+    <div class="links">
+        <a href="output/civilization_scaling_interactive.html">🖱️ Interactive (Hover/Zoom)</a>
+        <a href="output/civilization_scaling_highres.png">📷 High-res PNG</a>
+        <a href="output/civilization_scaling.svg">📐 SVG</a>
+        <a href="data/civilization_metrics.csv">📊 CSV Data</a>
+    </div>
+
+    <div class="highlight">
+        <strong>💡 Key Insight:</strong> Log-time reveals that ~99% of human existence was pre-writing. Agriculture is only 12K years. The Internet is a blink (~30 years). AI is instantaneous on this scale.
+    </div>
+
+    <div class="description">
+        <h2>The Four Lanes</h2>
+        <table>
+            <tr><th>Lane</th><th>Metric</th><th>Trend</th><th>Key Flips</th></tr>
+            <tr><td class="lane-energy"><strong>Energy</strong></td><td>kcal/person/day</td><td>↑ Growth</td><td>Fire → Agriculture → Steam → Grid</td></tr>
+            <tr><td class="lane-coord"><strong>Coordination</strong></td><td>Max stable group</td><td>↑ Growth</td><td>Language → Writing → Print → Internet</td></tr>
+            <tr><td class="lane-memory"><strong>Memory</strong></td><td>bits/person</td><td>↑ Growth</td><td>Symbols → Writing → Print → AI</td></tr>
+            <tr><td class="lane-repl"><strong>Replication</strong></td><td>hours/copy (cost)</td><td>↓ Collapse</td><td>Scribes → Print → Digital → AI Gen</td></tr>
+        </table>
+
+        <h2>Phase Flips (Stacking Events)</h2>
+        <p>Dashed lines mark where lanes flip together:</p>
+        <ul>
+            <li><strong>800K:</strong> Fire/Cooking → Brain growth</li>
+            <li><strong>12K:</strong> Agriculture → Surplus → Cities</li>
+            <li><strong>5K:</strong> Writing → Institutions</li>
+            <li><strong>574:</strong> Printing → Scientific Revolution</li>
+            <li><strong>264:</strong> Steam → Industrial Revolution</li>
+            <li><strong>44:</strong> Internet → Global Instant</li>
+            <li><strong>4:</strong> AI → Mind Automation</li>
+        </ul>
+    </div>
+
+    <div class="companion">
+        <strong>Related plots:</strong>
+        <a href="../ai-compute-timeline/">AI Compute</a> |
+        <a href="../adoption-timeline/">Adoption</a> |
+        <a href="../energetic-scaling/">Energetic Scaling</a>
+        — Together showing how infrastructure layers enable exponential progress.
+    </div>
+
+    <footer>
+        Sources: OWID, ethnographic data, Herculano-Houzel, Kaplan/Charnov LHT, Kurzweil |
+        <a href="https://github.com/mschwar/plots">GitHub</a> | MIT | Jan 2026
+    </footer>
+</body>
+</html>

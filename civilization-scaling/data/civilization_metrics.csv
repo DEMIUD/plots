@@ -1,0 +1,66 @@
+Lane,Era,Event,Years_Ago,Metric_Value,Metric_Unit,Impact,Notes,Phase_Flip
+Energy,Prehistory,Early Hominid Foraging,1000000,500,kcal/person/day,Medium,Baseline foraging; ~2000 kcal total intake,
+Energy,Prehistory,Controlled Fire (Cooking),800000,2000,kcal/person/day,Transformative,Cooking +40% caloric extraction; neurons/kcal rise,Cooking → Larger Brains
+Energy,Prehistory,Hunting Cooperation,300000,2500,kcal/person/day,High,Group hunts; meat sharing; variance reduction,Sharing → Social Bonds
+Energy,Prehistory,Late Paleolithic Efficiency,50000,3000,kcal/person/day,Medium,Better tools; diverse diet,
+Energy,Neolithic,Agriculture Domestication,12000,5000,kcal/person/day,Transformative,Surplus enables specialization,Surplus → Classes/Cities
+Energy,Neolithic,Animal Draft Power,8000,8000,kcal/person/day,High,Oxen/horses multiply labor,
+Energy,Ancient,Irrigation Systems,5000,12000,kcal/person/day,High,Water control; yield multiplication,
+Energy,Ancient,Iron Tools/Plows,3000,15000,kcal/person/day,Medium,Better agricultural implements,
+Energy,Pre-Modern,Watermills/Windmills,1000,25000,kcal/person/day,High,Non-human mechanical power,Mills → Proto-Industry
+Energy,Industrial,Steam Engine,264,50000,kcal/person/day,Transformative,Fossil fuels unlock deep energy,Coal → Industrial Revolution
+Energy,Industrial,Electricity Grid,144,100000,kcal/person/day,Transformative,Power distribution at scale,Grid → Modern Society
+Energy,Modern,Oil/Internal Combustion,120,200000,kcal/person/day,High,Liquid fuels; mobility,
+Energy,Modern,Nuclear Power,74,500000,kcal/person/day,High,Dense energy source,
+Energy,Digital,Renewables at Scale,24,300000,kcal/person/day,High,Solar/wind cost collapse,
+Energy,Digital,AI Compute Demand,4,1000000,kcal/person/day,High,Datacenters; energy surge,
+Energy,Future,Fusion/Advanced (projected),0,10000000,kcal/person/day,Speculative,Abundant clean energy,Fusion → Post-Scarcity
+Coordination,Prehistory,Band Foraging (Dunbar seeds),1000000,30,max_stable_group,Medium,Primate-like social groups,
+Coordination,Prehistory,Language + Food Sharing,250000,50,max_stable_group,Transformative,OFT/LHT variance reduction; Ache-style,Language → Shared Myths
+Coordination,Prehistory,Symbolic Ritual/Art,50000,150,max_stable_group,High,Dunbar number ceiling; tribe cohesion,
+Coordination,Neolithic,Agricultural Villages,12000,500,max_stable_group,High,Sedentism; larger stable groups,
+Coordination,Neolithic,Chiefdoms,7000,2000,max_stable_group,High,Hierarchical coordination,Hierarchy → Specialization
+Coordination,Ancient,City-States,5000,10000,max_stable_group,Transformative,Writing/laws enable institutional trust,Writing → Institutions
+Coordination,Ancient,Empires (Rome/Han),2200,1000000,max_stable_group,Transformative,Bureaucracy/roads/coinage,Empire → Trade Networks
+Coordination,Pre-Modern,Nation-States,500,10000000,max_stable_group,High,Print/vernacular/nationalism,Print → National Identity
+Coordination,Industrial,Global Trade Networks,200,100000000,max_stable_group,High,Telegraph/steamships,Telegraph → Global Markets
+Coordination,Modern,Multinational Corporations,74,500000000,max_stable_group,High,Corporate coordination across nations,
+Coordination,Digital,Internet Communities,44,1000000000,max_stable_group,Transformative,Frictionless global grouping,Internet → Instant Global
+Coordination,Digital,Social Platforms,14,3000000000,max_stable_group,High,Billions on single platforms (Facebook/WeChat),
+Coordination,Digital,AI-Mediated Coordination,4,5000000000,max_stable_group,High,AI enables new trust/matching,AI → Automated Trust
+Coordination,Future,Global Mesh (projected),0,8000000000,max_stable_group,Speculative,Near-universal coordination,
+Memory,Prehistory,Oral Tradition Only,1000000,100,bits/person,Low,Stories/songs; lossy intergenerational,
+Memory,Prehistory,Language Mnemonics,200000,1000,bits/person,Medium,Structured oral encoding,
+Memory,Prehistory,Cave Art/Symbols,40000,5000,bits/person,High,External symbolic storage begins,Symbols → Externalized Mind
+Memory,Neolithic,Proto-Writing (tokens),8000,10000,bits/person,High,Clay tokens; accounting,
+Memory,Ancient,Writing (Cuneiform/Scribes),5000,50000,bits/person,Transformative,Reliable external memory,Writing → Cumulative Knowledge
+Memory,Ancient,Alphabets/Libraries,2500,500000,bits/person,High,Easier encoding; Alexandria,
+Memory,Pre-Modern,Printing Press,574,10000000,bits/person,Transformative,Mass replication of text,Print → Scientific Revolution
+Memory,Industrial,Telegraph/Photography,180,100000000,bits/person,High,Instant transmission; images,
+Memory,Industrial,Radio/Film/Records,100,1000000000,bits/person,High,Broadcast; audio-visual,
+Memory,Modern,Television,74,10000000000,bits/person,High,Moving images at scale,
+Memory,Modern,Personal Computers,44,100000000000,bits/person,Transformative,Digital storage personal,PC → Digital Self
+Memory,Digital,Internet/Cloud,24,1000000000000,bits/person,Transformative,Global memory access; unlimited,Internet → Infinite Recall
+Memory,Digital,AI Search/Synthesis,4,1000000000000000,bits/person,Transformative,AI retrieves/synthesizes all knowledge,AI → Mind Automation
+Memory,Future,Neural Interface (projected),0,1e18,bits/person,Speculative,Direct brain-computer memory,
+Replication,Prehistory,Handcraft Only,1000000,1000,hours/copy,Low,Each tool individually made,
+Replication,Prehistory,Teaching/Apprenticeship,200000,100,hours/copy,Medium,Skill transfer via imitation,
+Replication,Neolithic,Molds/Templates,8000,10,hours/copy,High,Ceramic/metal molds,Templates → Mass Seeds
+Replication,Ancient,Scribes (text copy),5000,50,hours/copy,Medium,Professional copyists; expensive,
+Replication,Pre-Modern,Printing Press,574,0.1,hours/copy,Transformative,Mechanical text replication,Print → Ideas Replicate Free
+Replication,Industrial,Factory/Interchangeable Parts,200,0.01,hours/copy,Transformative,Mass production,Factory → Consumer Society
+Replication,Industrial,Mass Media,100,0.001,hours/copy,High,Records/film duplication,
+Replication,Modern,Photocopying,60,0.0001,hours/copy,Medium,Instant document copy,
+Replication,Digital,Digital Files,44,0.00001,hours/copy,Transformative,Zero marginal cost,Digital → Free Copy
+Replication,Digital,Internet Distribution,24,0.000001,hours/copy,High,Global instant distribution,
+Replication,Digital,AI Content Generation,4,0.0000001,hours/copy,Transformative,AI creates content instantly,AI → Creation Zero Cost
+Replication,Future,Molecular Assembly (projected),0,1e-10,hours/copy,Speculative,Physical items replicated,
+Latency,Prehistory,Walking/Voice,1000000,86400000,ms_delay,Low,Speed of foot; days over distance,
+Latency,Ancient,Horse/Ship Relay,3000,864000,ms_delay,High,Faster transport; still days,
+Latency,Pre-Modern,Postal Systems,500,86400,ms_delay,Medium,Organized mail; day-scale,
+Latency,Industrial,Telegraph,180,1000,ms_delay,Transformative,Near-instant electrical signal,Telegraph → Real-Time Era
+Latency,Industrial,Telephone,140,100,ms_delay,High,Voice in real-time,
+Latency,Modern,Radio/TV Broadcast,100,10,ms_delay,High,Mass simultaneous broadcast,
+Latency,Digital,Internet/Fiber,24,50,ms_delay,Transformative,Global packet switching,Internet → Distance Irrelevant
+Latency,Digital,5G/Edge,4,5,ms_delay,High,Ultra-low latency networks,
+Latency,Future,Quantum/Neural (projected),0,0.1,ms_delay,Speculative,Near-zero delay,

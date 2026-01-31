@@ -7,6 +7,7 @@ Interactive timelines of exponential tech progress – showing growth, compressi
 - [AI Compute Timeline (Interactive)](ai-compute-timeline/output/ai_compute_timeline_interactive.html)
 - [Adoption Timeline (Interactive)](adoption-timeline/output/adoption_timeline_interactive.html)
 - [Energetic Scaling (Interactive)](energetic-scaling/output/energetic_scaling_interactive.html)
+- [Civilization Scaling (Interactive)](civilization-scaling/output/civilization_scaling_interactive.html)
 
 ---
 
@@ -38,7 +39,7 @@ Time to ~50M users adoption – shows exponential compression from years to days
 
 ---
 
-## 3. Energetic Scaling: Biology vs. Technology (NEW)
+## 3. Energetic Scaling: Biology vs. Technology
 
 Neural efficiency vs. body size (Biology) and compute efficiency vs. time (Tech) – both reveal power laws.
 
@@ -52,6 +53,20 @@ Neural efficiency vs. body size (Biology) and compute efficiency vs. time (Tech)
 
 ---
 
+## 4. Scaling Civilization: Energy, Coordination, Memory, Replication (NEW)
+
+Multi-lane log-time timeline showing how four fundamental metrics have scaled from 1M years ago to 2030+.
+
+- **Interactive**: [View Full Interactive Version (Plotly – Hover/Zoom)](civilization-scaling/output/civilization_scaling_interactive.html)
+- **Static**: [PNG](civilization-scaling/output/civilization_scaling_highres.png) | [SVG](civilization-scaling/output/civilization_scaling.svg)
+- **Details**: [civilization-scaling/](civilization-scaling/)
+
+![Civilization Scaling](civilization-scaling/output/civilization_scaling_highres.png)
+
+*Log-time compresses ~99% of human existence (pre-writing) into the left side, expanding modern acceleration on the right. Phase flips (Fire → Agriculture → Writing → Printing → Internet → AI) stack to enable exponential progress.*
+
+---
+
 ## Why These Plots?
 
 | Timeline | Shows | Trend |
@@ -59,13 +74,15 @@ Neural efficiency vs. body size (Biology) and compute efficiency vs. time (Tech)
 | **Compute** | Training FLOPs (10⁰ → 10²⁷) | Exponential **growth** ↑ |
 | **Adoption** | Time to 50M users | Exponential **compression** ↓ |
 | **Energetic** | Neurons/kg & cps/$ | **Power laws** (log-log linear) |
+| **Civilization** | Energy/Coord/Memory/Repl | **Stacking infrastructure** layers |
 
 Together they illustrate:
 - **Compute**: Raw exponential growth enabling AI scale
 - **Adoption**: Ecosystem acceleration compressing timelines
 - **Energetic**: Fundamental scaling rules – humans and AI as outliers
+- **Civilization**: How infrastructure layers (fire → writing → internet → AI) enable each successive leap
 
-Inspired by Kurzweil, [Epoch AI](https://epochai.org/), [Statista](https://www.statista.com/), [Asymco](http://www.asymco.com/), Herculano-Houzel (neuronal scaling), Kleiber (metabolic 0.75).
+Inspired by Kurzweil, [Epoch AI](https://epochai.org/), [Statista](https://www.statista.com/), [Asymco](http://www.asymco.com/), Herculano-Houzel (neuronal scaling), Kleiber (metabolic 0.75), Kaplan/Charnov (LHT/OFT).
 
 ---
 
