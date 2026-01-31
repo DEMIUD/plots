@@ -8,7 +8,7 @@ Interactive timelines of exponential tech progress – showing growth, compressi
 - [Adoption Timeline (Interactive)](adoption-timeline/output/adoption_timeline_interactive.html)
 - [Energetic Scaling (Interactive)](energetic-scaling/output/energetic_scaling_interactive.html)
 - [Civilization Scaling (Interactive)](civilization-scaling/output/civilization_scaling_interactive.html)
-- [Energy Leverage (Interactive)](energy-leverage-per-person/export/energy_leverage_interactive.html)
+- [Energy Leverage (Interactive)](energy-leverage-per-person/output/energy_leverage_interactive.html)
 
 ---
 
@@ -72,11 +72,11 @@ Multi-lane log-time timeline showing how four fundamental metrics have scaled fr
 
 How much total energy does an average human command compared to the metabolic baseline (~114 W)?
 
-- **Interactive**: [View Full Interactive Version (Plotly – Hover/Zoom)](energy-leverage-per-person/export/energy_leverage_interactive.html)
-- **Static**: [PNG](energy-leverage-per-person/export/energy_leverage_highres.png) | [SVG](energy-leverage-per-person/export/energy_leverage.svg)
+- **Interactive**: [View Full Interactive Version (Plotly – Hover/Zoom)](energy-leverage-per-person/output/energy_leverage_interactive.html)
+- **Static**: [PNG](energy-leverage-per-person/output/energy_leverage_highres.png) | [SVG](energy-leverage-per-person/output/energy_leverage.svg)
 - **Details**: [energy-leverage-per-person/](energy-leverage-per-person/)
 
-![Energy Leverage](energy-leverage-per-person/export/energy_leverage_highres.png)
+![Energy Leverage](energy-leverage-per-person/output/energy_leverage_highres.png)
 
 *Humans went from ~1–2× body energy (foragers) to ~17× body energy (modern). The post-1750 coal/steam and post-1950 oil/electricity jumps dominate the visual story.*
 
@@ -113,7 +113,7 @@ Each plot follows a standardized structure:
 ├── data/
 │   ├── <slug>.csv          # Source data
 │   └── meta.json           # Metadata: title, description, fields, sources
-├── output/ or export/
+├── output/
 │   ├── *_interactive.html  # Plotly interactive chart
 │   ├── *_highres.png       # High-res PNG export
 │   └── *.svg               # SVG vector export

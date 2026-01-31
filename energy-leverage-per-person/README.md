@@ -2,11 +2,11 @@
 
 How much total energy does an average human command per year, compared to the metabolic baseline?
 
-![Energy Leverage](export/energy_leverage_highres.png)
+![Energy Leverage](output/energy_leverage_highres.png)
 
 ## Interactive Version
 
-Open [`export/energy_leverage_interactive.html`](export/energy_leverage_interactive.html) for hover details on each era.
+Open [`output/energy_leverage_interactive.html`](output/energy_leverage_interactive.html) for hover details on each era.
 
 ## The Key Insight
 
