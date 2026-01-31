@@ -1,0 +1,34 @@
+{
+  "title": "Adoption Timeline",
+  "description": "Time to ~50M users adoption, showing exponential compression from years to days (1957-2026).",
+  "fields": {
+    "Year": "Launch year of technology/product",
+    "Event": "Name of technology or product",
+    "Category": "Tech category (Hardware, Software, Internet/Web, Mobile, Social/Apps, Cloud, AI/Agentic)",
+    "Days_to_Adoption": "Days to reach ~50M users or equivalent adoption milestone",
+    "Impact": "Historical impact level (Transformative, High, Medium, Speculative)"
+  },
+  "sources": [
+    {
+      "name": "Statista",
+      "url": "https://www.statista.com/",
+      "accessed": "2026-01",
+      "notes": "User growth and adoption data"
+    },
+    {
+      "name": "Asymco",
+      "url": "http://www.asymco.com/",
+      "accessed": "2026-01",
+      "notes": "Historical technology adoption curves"
+    },
+    {
+      "name": "Epoch AI",
+      "url": "https://epochai.org/",
+      "accessed": "2026-01",
+      "notes": "AI adoption metrics"
+    }
+  ],
+  "transformations": "Log10(days) for y-axis. Midpoints used for date ranges. Pre-1990 estimates approximate.",
+  "created": "2026-01",
+  "author": "mschwar"
+}

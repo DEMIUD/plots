@@ -1,0 +1,37 @@
+{
+  "title": "Energetic Scaling: Biology vs. Technology",
+  "description": "Dual-panel comparison: biological neural efficiency (neurons/kg vs body mass) and technological compute efficiency (cps/$ vs time).",
+  "fields": {
+    "species": "Species name (biology panel)",
+    "body_mass_kg": "Body mass in kilograms",
+    "neurons": "Total neuron count",
+    "neurons_per_kg": "Neurons per kilogram of body mass",
+    "EQ": "Encephalization Quotient (brain size vs expected for body size)",
+    "year": "Year (technology panel)",
+    "device": "Computing device name",
+    "cps_per_dollar": "Calculations per second per dollar"
+  },
+  "sources": [
+    {
+      "name": "Herculano-Houzel (2009)",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2776484/",
+      "accessed": "2026-01",
+      "notes": "Neuronal scaling rules, isotropic fractionator method"
+    },
+    {
+      "name": "Kurzweil (2005, 2012)",
+      "url": "https://www.singularity.com/",
+      "accessed": "2026-01",
+      "notes": "Compute price-performance trends (75 quadrillion-fold increase)"
+    },
+    {
+      "name": "Kleiber's Law",
+      "url": "https://en.wikipedia.org/wiki/Kleiber%27s_law",
+      "accessed": "2026-01",
+      "notes": "Metabolic scaling (0.75 exponent)"
+    }
+  ],
+  "transformations": "Both panels log-log. Biology: neurons/kg vs body mass. Tech: cps/$ vs year.",
+  "created": "2026-01",
+  "author": "mschwar"
+}

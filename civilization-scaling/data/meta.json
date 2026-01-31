@@ -1,0 +1,44 @@
+{
+  "title": "Scaling Civilization",
+  "description": "Multi-lane log-time timeline showing Energy, Coordination, Memory, and Replication metrics from 1M years ago to 2030+.",
+  "fields": {
+    "Lane": "Metric lane (Energy, Coordination, Memory, Replication, Latency)",
+    "Era": "Historical era (Prehistory, Neolithic, Ancient, Pre-Modern, Industrial, Modern, Digital, Future)",
+    "Event": "Milestone event name",
+    "Years_Ago": "Years before 2026 (absolute)",
+    "Metric_Value": "Quantitative value for the lane metric",
+    "Metric_Unit": "Unit of measurement",
+    "Impact": "Historical impact level",
+    "Notes": "Additional context",
+    "Phase_Flip": "Phase transition description (if applicable)"
+  },
+  "sources": [
+    {
+      "name": "Our World in Data",
+      "url": "https://ourworldindata.org/",
+      "accessed": "2026-01",
+      "notes": "Energy, population, historical data"
+    },
+    {
+      "name": "Herculano-Houzel",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2776484/",
+      "accessed": "2026-01",
+      "notes": "Neurons/kcal relationship"
+    },
+    {
+      "name": "Kaplan/Charnov LHT",
+      "url": "https://en.wikipedia.org/wiki/Life_history_theory",
+      "accessed": "2026-01",
+      "notes": "Life History Theory, Optimal Foraging Theory"
+    },
+    {
+      "name": "Kurzweil",
+      "url": "https://www.singularity.com/",
+      "accessed": "2026-01",
+      "notes": "Technology acceleration patterns"
+    }
+  ],
+  "transformations": "Log x-axis: -log10(years_ago + 1) to compress prehistory and expand modern era. Log y-axis for each lane.",
+  "created": "2026-01",
+  "author": "mschwar"
+}

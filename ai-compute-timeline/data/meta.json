@@ -1,0 +1,34 @@
+{
+  "title": "AI Compute Timeline",
+  "description": "Training FLOPs milestones for AI history, from vacuum tubes to frontier models (1900-2026).",
+  "fields": {
+    "Year": "Year of milestone",
+    "Event": "Name of model/system",
+    "Category": "Era category (Early Compute, Neural Nets, Deep Learning, etc.)",
+    "Training_FLOPs": "Estimated floating-point operations for training",
+    "Impact": "Historical impact level (Transformative, High, Medium, Speculative)"
+  },
+  "sources": [
+    {
+      "name": "Epoch AI",
+      "url": "https://epochai.org/",
+      "accessed": "2026-01",
+      "notes": "Primary source for training compute estimates"
+    },
+    {
+      "name": "Our World in Data",
+      "url": "https://ourworldindata.org/artificial-intelligence",
+      "accessed": "2026-01",
+      "notes": "Historical AI milestones"
+    },
+    {
+      "name": "Kurzweil (2005)",
+      "url": "https://www.singularity.com/",
+      "accessed": "2026-01",
+      "notes": "Early compute estimates, price-performance trends"
+    }
+  ],
+  "transformations": "Log10(FLOPs) for y-axis. Pre-2010 estimates are approximate (dashed line region).",
+  "created": "2026-01",
+  "author": "mschwar"
+}
