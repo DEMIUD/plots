@@ -187,7 +187,7 @@ def main():
 
     # Save interactive HTML
     html_path = os.path.join(output_dir, 'energy_leverage_interactive.html')
-    fig.write_html(html_path)
+    fig.write_html(html_path, include_plotlyjs="cdn")
     print(f"Saved: {html_path}")
 
     print("\nDone!")

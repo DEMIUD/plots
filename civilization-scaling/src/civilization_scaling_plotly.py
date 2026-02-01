@@ -178,7 +178,7 @@ def main():
     df = load_data()
     fig = create_plotly_chart(df)
     output_path = os.path.join(output_dir, 'civilization_scaling_interactive.html')
-    fig.write_html(output_path)
+    fig.write_html(output_path, include_plotlyjs="cdn")
     print(f"Saved: {output_path}")
     print("\nDone!")
 
